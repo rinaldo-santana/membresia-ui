@@ -1,0 +1,47 @@
+<p>
+  dadosResposta: {{dadosResposta | json}}
+</p>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Novo Membro</h3>
+                </div>                
+                <form  [formGroup]="membroCadastroForm" (ngSubmit)="onSubmit()">
+                  <div class="box-body">
+                    <div class="form-group" 
+                        [class.has-error]="membroCadastroForm.controls.nome.invalid && (membroCadastroForm.controls.nome.dirty || membroCadastroForm.controls.nome.touched)">
+                        <label for="inputNomeCompleto">Nome completo</label>
+                        <input type="text" class="form-control" formControlName="nome" id="inputNomeCompleto" placeholder="Digite o seu nome completo">
+                        <span class="help-block" *ngIf="membroCadastroForm.controls.nome.invalid && (membroCadastroForm.controls.nome.dirty || membroCadastroForm.controls.nome.touched)">Campo inválido</span>
+                    </div>                          
+                    <div class="form-group" 
+                        [class.has-error]="membroCadastroForm.controls.email.invalid && (membroCadastroForm.controls.email.dirty || membroCadastroForm.controls.email.touched)">
+                      <label for="inputEmail">Email</label>
+                      <input type="email" class="form-control" formControlName="email" id="inputEmail" placeholder="Digite o seu melhor email">
+                      <span class="help-block" *ngIf="membroCadastroForm.controls.email.invalid && (membroCadastroForm.controls.email.dirty || membroCadastroForm.controls.email.touched)">Campo inválido</span>
+                    </div>  
+                    <div class="form-group" 
+                        [class.has-error]="membroCadastroForm.controls.telefone.invalid && (membroCadastroForm.controls.telefone.dirty || membroCadastroForm.controls.telefone.touched)">
+                        <label for="inputTelefone">Fone</label>
+                        <input type="text" class="form-control" formControlName="telefone" id="inputTelefone" placeholder="(99) 91234-1234">           
+                        <span class="help-block" *ngIf="membroCadastroForm.controls.telefone.invalid && (membroCadastroForm.controls.telefone.dirty || membroCadastroForm.controls.telefone.touched)">Campo inválido</span>
+                    </div> 
+                    <div class="form-group" 
+                        [class.has-error]="membroCadastroForm.controls.dataNascimento.invalid && (membroCadastroForm.controls.dataNascimento.dirty || membroCadastroForm.controls.dataNascimento.touched)">
+                        <label for="inputDataNascimento">Data de Nascimento</label>
+                        <input type="date" class="form-control" formControlName="dataNascimento" id="inputDataNascimento" placeholder="Digite o seu email">
+                        <span class="help-block" *ngIf="membroCadastroForm.controls.dataNascimento.invalid && (membroCadastroForm.controls.dataNascimento.dirty || membroCadastroForm.controls.dataNascimento.touched)">Campo inválido</span>
+                    </div>                                    
+                  </div>    
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-success" [disabled]="!membroCadastroForm.valid">Salvar</button>
+                    <button class="btn btn-primary" [routerLink]="['/membros']">Voltar</button>
+                  </div>
+                </form>
+              </div>
+        </div>
+    </div>
+</section>

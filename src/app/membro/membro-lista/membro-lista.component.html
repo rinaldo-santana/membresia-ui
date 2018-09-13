@@ -1,0 +1,45 @@
+<section class="content">
+  <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+          <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">Membros</h3>
+              </div>
+              <div class="tabela">
+                <p-table #dataTable [columns]="colunas" [value]="dados" selectionMode="single" 
+                         [(selection)]="membroSelecionado" dataKey="id" [responsive]="true"
+                         [paginator]="true" [rows]="5">
+
+                    <ng-template pTemplate="caption">
+                      <div class="mmInputPesquisa">          
+                          <input type="text" pInputText size="50" placeholder="Pesquisa" (input)="dataTable.filterGlobal($event.target.value, 'contains')" >
+                          <i class="fa fa-search"></i>            
+                          <button type="submit" class="btn btn-primary" [routerLink]="['/membros/cadastro']">Novo</button> 
+                      </div>
+                    </ng-template>    
+                    <ng-template pTemplate="header" let-columns >
+                        <tr>
+                            <th *ngFor="let coluna of colunas" [pSortableColumn]="coluna.field" [ngClass]="coluna.field">
+                                {{ coluna.header }}
+                                <p-sortIcon [field]="coluna.field"></p-sortIcon>
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-dado >
+                        <tr >
+                           <td *ngFor="let col of colunas">
+                               <span class="ui-column-title">{{col.header}}</span>
+                               {{ dado[col.field] }}
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="summary">
+                        {{ membroSelecionado | json }}
+                    </ng-template>
+                </p-table>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

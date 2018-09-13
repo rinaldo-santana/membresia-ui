@@ -1,0 +1,23 @@
+.mmInputPesquisa {
+	text-align: left;
+}
+.mmInputPesquisa, input {
+	margin-right: 10px;
+}
+button {
+	float:right;
+	padding: 6px 30px 6px 30px;
+}
+.email {
+    width: 220px;
+}
+.id {
+    width: 70px;
+}
+.telefone {
+    width: 140px;
+}
+.dataNascimento {
+    width: 150px;
+}
+
