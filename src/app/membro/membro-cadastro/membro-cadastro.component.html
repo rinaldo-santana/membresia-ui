@@ -1,16 +1,18 @@
-<p>
-  dadosResposta: {{dadosResposta | json}}
-</p>
 
-<section class="content">
+<section class="content" >
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Novo Membro</h3>
-                </div>                
-                <form  [formGroup]="membroCadastroForm" (ngSubmit)="onSubmit()">
-                  <div class="box-body">
+                </div>                   
+                 
+                <form  [formGroup]="membroCadastroForm" (ngSubmit)="onSubmit()" >
+                  <div class="box-body" >
+                    <div class="form-group" *ngIf="false">                       
+                        <input type="text" formControlName="id" >
+                    </div> 
+
                     <div class="form-group" 
                         [class.has-error]="membroCadastroForm.controls.nome.invalid && (membroCadastroForm.controls.nome.dirty || membroCadastroForm.controls.nome.touched)">
                         <label for="inputNomeCompleto">Nome completo</label>
@@ -32,14 +34,15 @@
                     <div class="form-group" 
                         [class.has-error]="membroCadastroForm.controls.dataNascimento.invalid && (membroCadastroForm.controls.dataNascimento.dirty || membroCadastroForm.controls.dataNascimento.touched)">
                         <label for="inputDataNascimento">Data de Nascimento</label>
-                        <input type="date" class="form-control" formControlName="dataNascimento" id="inputDataNascimento" placeholder="Digite o seu email">
+                        <input type="date" class="form-control" formControlName="dataNascimento" id="inputDataNascimento">
                         <span class="help-block" *ngIf="membroCadastroForm.controls.dataNascimento.invalid && (membroCadastroForm.controls.dataNascimento.dirty || membroCadastroForm.controls.dataNascimento.touched)">Campo inválido</span>
                     </div>                                    
                   </div>    
                   <div class="box-footer">
                     <button type="submit" class="btn btn-success" [disabled]="!membroCadastroForm.valid">Salvar</button>
-                    <button class="btn btn-primary" [routerLink]="['/membros']">Voltar</button>
-                  </div>
+                    <button class="btn btn-primary" [routerLink]="['/membros']">Voltar</button>                  
+                  </div>                                
+
                 </form>
               </div>
         </div>

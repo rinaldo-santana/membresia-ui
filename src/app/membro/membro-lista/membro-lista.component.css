@@ -4,20 +4,29 @@
 .mmInputPesquisa, input {
 	margin-right: 10px;
 }
-button {
+.mmInputPesquisa button {
 	float:right;
 	padding: 6px 30px 6px 30px;
 }
-.email {
+.Email {
     width: 220px;
 }
-.id {
+.Id {
     width: 70px;
 }
-.telefone {
+.Telefone {
     width: 140px;
 }
-.dataNascimento {
-    width: 150px;
+.Nascimento {
+    width: 140px;
+    text-align: center;
+}
+.Acoes {
+    width: 100px;
+    text-align: center;
+}
+.ui-button {
+	margin: 1.5px;
+	height: 2em;
 }
 

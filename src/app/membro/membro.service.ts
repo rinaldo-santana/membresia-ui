@@ -18,9 +18,20 @@ export class MembroService {
   	return this.http.get<Membro[]>(this.url);
   }
 
+  buscarPorId(id: string) {
+    return this.http.get<Membro>(`${this.url}/${id}`);
+  }
+
   salvar(dados: Membro): Observable<Membro> {
-  	console.log('>>> service: ', dados);
   	return this.http.post<Membro>(this.url, dados);
+  }
+
+  editar(dado: Membro): Observable<Membro> {
+    return this.http.put<Membro>(this.url, dado);
+  }
+
+  remover(id: string) {
+     return this.http.delete<any>(`${this.url}/${id}`);
   }
 
 }
