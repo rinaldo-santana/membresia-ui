@@ -27,8 +27,6 @@ export class MembroCadastroComponent implements OnInit {
     dataNascimento: new FormControl('', Validators.required)
   });
 
-
-
   // membroCadastroForm = this.fb.group({
   //   nome: [''],
   //   email: [''],

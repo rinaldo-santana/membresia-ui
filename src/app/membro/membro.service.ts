@@ -12,8 +12,6 @@ export class MembroService {
 
   constructor(private http: HttpClient) { }
 
-
-
   buscarTodos() {
   	return this.http.get<Membro[]>(this.url);
   }

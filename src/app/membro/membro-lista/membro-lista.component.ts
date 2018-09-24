@@ -35,16 +35,6 @@ export class MembroListaComponent implements OnInit {
     ]; 
               
     this.mostrarTodos();
-    // this.dados = [
-    //   {id: '1', nome: 'Rinaldo', email: 'rinaldo@gmail.com', telefone: '83 98857-4899', dataNascimento: ''},
-    //   {id: '2', nome: 'Marcos', email: 'marcos@gmail.com', telefone: '83 98853-1899', dataNascimento: ''},
-    //   {id: '3', nome: 'Antonio', email: 'a@gmail.com', telefone: '83 98857-3899', dataNascimento: ''},
-    //   {id: '4', nome: 'João', email: 'j@gmail.com', telefone: '83 98857-8599', dataNascimento: ''},
-    //   {id: '5', nome: 'Marcelo', email: 'ax@gmail.com', telefone: '83 98847-7899', dataNascimento: ''},
-    //   {id: '6', nome: 'José', email: 'jj@hotmail.com', telefone: '83 98557-8899', dataNascimento: ''},
-    //   {id: '7', nome: 'André', email: 'aa@hotmail.com', telefone: '83 99957-8899', dataNascimento: ''},
-    //   {id: '8', nome: 'Lucas', email: 'luc@gmail.com', telefone: '83 98786-7899', dataNascimento: ''}
-    // ];
   }
 
   mostrarTodos() {
@@ -65,8 +55,7 @@ export class MembroListaComponent implements OnInit {
               this.dadosResposta = dado;
               let affectedRows = parseInt(this.dadosResposta.affectedRows);
               let ok = (affectedRows > 0);
-              if (ok){ 
-                console.log('this.dados.indexOf(membro): ', this.dados.indexOf(membro));
+              if (ok){             
                 this.dados.splice(this.dados.indexOf(membro), 1);
               }
             })
