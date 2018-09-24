@@ -1,3 +1,7 @@
+
+[![Build Status](https://travis-ci.com/rinaldo-santana/membresia-ui.svg?branch=master)](https://travis-ci.com/rinaldo-santana/membresia-ui)
+
+
 # MembresiaUi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
